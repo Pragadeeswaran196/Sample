@@ -8,3 +8,4 @@ import subprocess
 
 # Get the list of HPAs for all namespaces
 hpas=subprocess.run(["kubectl", "get", "hpa", "--all-namespaces"])
+print(hpas)
