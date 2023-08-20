@@ -1,9 +1,16 @@
 locals {
-  Queue = [for line in split("\n", file("visble_msg.txt")) : {
-    Queue_name = length(split(":", line)) >= 1 ? split(":", line)[0] : ""
-    Threshold = length(split(":", line)) >= 2 ? split(":", line)[1] : ""
-    sustain = length(split(":", line)) >= 3 ? split(":", line)[2] : ""
-  }]
+  lines = split("\n", file("visble_msg.txt"))
+  non_empty_lines = [
+    for line in local.lines : line if trimspace(line) != ""
+  ]
+
+  Queue = [
+    for line in local.non_empty_lines : {
+      Queue_name = split(",", line)[0]
+      Threshold  = length(split(",", line)) >= 2 ? split(",", line)[1] : ""
+      sustain    = length(split(",", line)) >= 3 ? split(",", line)[2] : ""
+    }
+  ]
 }
 resource "chronosphere_monitor" "critical_prod_aws_inf_sqs_visible_msg" {
   name                   = "testing-jenkins-terraform"
