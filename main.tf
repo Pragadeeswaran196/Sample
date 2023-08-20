@@ -6,7 +6,7 @@ locals {
   }]
 }
 resource "chronosphere_monitor" "critical_prod_aws_inf_sqs_visible_msg" {
-  name                   = "Critical | PROD | AWS INF | SQS  |  ApproximateNumberOfMessagesVisible breached Upper Threshold"
+  name                   = "testing-jenkins-terraform"
   slug                   = "critical-prod-aws-inf-sqs-visible-msg"
   bucket_id              = "techops-prod-alerts"
   notification_policy_id = "techops-prod-alerts"
