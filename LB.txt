@@ -1,0 +1,1 @@
+fk-marketing-service-prod-al2-go:100:15m
