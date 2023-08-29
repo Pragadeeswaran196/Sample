@@ -12,9 +12,9 @@ locals {
     }
   ]
 }
-resource "chronosphere_monitor" "jenkins-test" {
-  name                   = "testing-jenkins-terraform"
-  slug                   = "testing-jenkins-terraform"
+resource "chronosphere_monitor" "jenkins-test1" {
+  name                   = "testing-jenkins-terraform1"
+  slug                   = "testing-jenkins-terraform1"
   bucket_id              = "techops-prod-alerts"
   notification_policy_id = "techops-prod-alerts"
 
