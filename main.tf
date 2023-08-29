@@ -12,9 +12,9 @@ locals {
     }
   ]
 }
-resource "chronosphere_monitor" "critical_prod_aws_inf_sqs_visible_msg" {
+resource "chronosphere_monitor" "jenkins-test" {
   name                   = "testing-jenkins-terraform"
-  slug                   = "critical-prod-aws-inf-sqs-visible-msg"
+  slug                   = "testing-jenkins-terraform"
   bucket_id              = "techops-prod-alerts"
   notification_policy_id = "techops-prod-alerts"
 
